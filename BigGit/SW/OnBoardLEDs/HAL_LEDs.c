@@ -40,7 +40,7 @@ struct TimerParams OnBoardLED_Timer = {TIMER_MODE_SIMPLE_PERIODIC, TIMER_TIME_50
 
 void InitApp_OnBoardLEDs()
 {
-    GPIO_setOutputHighOnPin(GPIO_OnBoardLEDs[0].SelectedPort, GPIO_OnBoardLEDs[0].SelectedPin);
+    GPIO_setOutputLowOnPin(GPIO_OnBoardLEDs[0].SelectedPort, GPIO_OnBoardLEDs[0].SelectedPin);
     GPIO_setOutputLowOnPin(GPIO_OnBoardLEDs[1].SelectedPort, GPIO_OnBoardLEDs[1].SelectedPin);
 }
 
