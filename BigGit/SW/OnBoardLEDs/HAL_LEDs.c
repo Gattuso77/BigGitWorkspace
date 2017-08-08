@@ -36,8 +36,8 @@ GPIO_GRS OnBoardLED_HWModule = {GPIO_OnBoardLEDs, 2, GPIO_PRIORITY_NORMAL};
 //
 struct Eventer     OnBoardRedLED_Event = { 0, 0, 0, OnBoardRedLED_Toggler};
 struct Eventer     OnBoardGreenLED_Event = { 0, 0, 0, OnBoardGreenLED_Toggler};
-struct TimerParams OnBoardRedLED_Timer = {TIMER_MODE_SIMPLE_PERIODIC, TIMER_TIME_200_mS, &OnBoardRedLED_Event, true};
-struct TimerParams OnBoardGreenLED_Timer = {TIMER_MODE_SIMPLE_PERIODIC, TIMER_TIME_1_SEC, &OnBoardGreenLED_Event, true};
+struct TimerParams OnBoardRedLED_Timer = {TIMER_MODE_SIMPLE_PERIODIC, TIMER_TIME_1_SEC, &OnBoardRedLED_Event, true};
+struct TimerParams OnBoardGreenLED_Timer = {TIMER_MODE_SIMPLE_PERIODIC, TIMER_TIME_100_mS, &OnBoardGreenLED_Event, true};
 
 
 void InitApp_OnBoardLEDs()
