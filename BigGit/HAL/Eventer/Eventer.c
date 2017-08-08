@@ -9,10 +9,11 @@
 // Module parameters (that are defined in the application modules that need a timer)
 //
 
-#define EVENT_COUNT     2
+#define EVENT_COUNT     3
 extern struct Eventer       Console_Event;
-extern struct Eventer       OnBoardLED_Event;
-struct Eventer * EventList[EVENT_COUNT] = { &Console_Event, &OnBoardLED_Event };
+extern struct Eventer       OnBoardRedLED_Event;
+extern struct Eventer       OnBoardGreenLED_Event;
+struct Eventer * EventList[EVENT_COUNT] = { &Console_Event, &OnBoardRedLED_Event, &OnBoardGreenLED_Event };
 
 
 //*****************************************************************************

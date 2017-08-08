@@ -24,7 +24,8 @@ extern struct TimerEvent Timer_A0_Events[TIMER_A0_EVENT_COUNT];
 //
 // Module parameters (that are defined in the application modules that need a timer)
 //
-extern struct TimerParams OnBoardLED_Timer;
+extern struct TimerParams OnBoardRedLED_Timer;
+extern struct TimerParams OnBoardGreenLED_Timer;
 
 
 //
@@ -57,7 +58,8 @@ void Initialize_Timers()
     //
     // Diagnostic LED
 #if MODULE_ONBOARD_LEDS
-    INIT_TIMER_EVENT(Timer_A0_Events, Timer_A0_Update, 0, OnBoardLED_Timer)
+    INIT_TIMER_EVENT(Timer_A0_Events, Timer_A0_Update, 0, OnBoardRedLED_Timer)
+    INIT_TIMER_EVENT(Timer_A0_Events, Timer_A0_Update, 1, OnBoardGreenLED_Timer)
 #endif
     // Initializing Timer A0
     Timer_A0_Initialization();

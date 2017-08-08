@@ -13,8 +13,8 @@
 //
 // This Module Function prototypes
 //
-void OnBoardLED_Toggler();
-
+void OnBoardRedLED_Toggler();
+void OnBoardGreenLED_Toggler();
 
 //
 // GPIO for LED control
@@ -34,8 +34,10 @@ GPIO_GRS OnBoardLED_HWModule = {GPIO_OnBoardLEDs, 2, GPIO_PRIORITY_NORMAL};
 //
 // Here we define a simple timer that will toggle led: timer type, timer period, our module callback
 //
-struct Eventer     OnBoardLED_Event = { 0, 0, 0, OnBoardLED_Toggler};
-struct TimerParams OnBoardLED_Timer = {TIMER_MODE_SIMPLE_PERIODIC, TIMER_TIME_500_mS, &OnBoardLED_Event, true};
+struct Eventer     OnBoardRedLED_Event = { 0, 0, 0, OnBoardRedLED_Toggler};
+struct Eventer     OnBoardGreenLED_Event = { 0, 0, 0, OnBoardGreenLED_Toggler};
+struct TimerParams OnBoardRedLED_Timer = {TIMER_MODE_SIMPLE_PERIODIC, TIMER_TIME_200_mS, &OnBoardRedLED_Event, true};
+struct TimerParams OnBoardGreenLED_Timer = {TIMER_MODE_SIMPLE_PERIODIC, TIMER_TIME_1_SEC, &OnBoardGreenLED_Event, true};
 
 
 void InitApp_OnBoardLEDs()
@@ -46,12 +48,22 @@ void InitApp_OnBoardLEDs()
 
 //*****************************************************************************
 //
-// This function should be called by timer
+// This function should be called by timer: Toggling RED LED
 //
 //*****************************************************************************
-void OnBoardLED_Toggler()
+void OnBoardRedLED_Toggler()
 {
     GPIO_toggleOutputOnPin(GPIO_OnBoardLEDs[0].SelectedPort, GPIO_OnBoardLEDs[0].SelectedPin);
+}
+
+
+//*****************************************************************************
+//
+// This function should be called by timer: Toogling Green LED
+//
+//*****************************************************************************
+void OnBoardGreenLED_Toggler()
+{
     GPIO_toggleOutputOnPin(GPIO_OnBoardLEDs[1].SelectedPort, GPIO_OnBoardLEDs[1].SelectedPin);
 }
 

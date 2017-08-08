@@ -8,7 +8,7 @@
 //
 // Firmware version
 //
-#define FW_VERSION_ID   "GIT_TEST_0.3"
+#define FW_VERSION_ID   "GIT_TEST_0.4"
 
 
 //*****************************************************************************
