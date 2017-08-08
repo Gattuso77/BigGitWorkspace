@@ -8,7 +8,7 @@
 //
 // Firmware version
 //
-#define FW_VERSION_ID   "GIT_TEST_0.1"
+#define FW_VERSION_ID   "GIT_TEST_0.2"
 
 
 //*****************************************************************************
@@ -55,7 +55,7 @@ int main(void)
         if(Console.IsBusy == false)
         {
             Console.ReportUint16Value("The counter value is: ", counter++, CONSOLE_MODE_ASYNC);
-            Console.Log("New Counter Value has been logged\n\r", CONSOLE_MODE_ASYNC);
+            Console.Log("This project has been modified form Laptop\n\r", CONSOLE_MODE_ASYNC);
         }
         SpinEventLoop();
     }
